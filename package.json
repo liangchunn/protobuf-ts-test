@@ -1,5 +1,5 @@
 {
-  "name": "protobuftest",
+  "name": "protobuf-ts-test",
   "version": "0.1.0",
   "main": "src/index.ts",
   "private": true,
@@ -7,15 +7,22 @@
     "test": "typescript-node-scripts test",
     "start": "typescript-node-scripts start",
     "build": "typescript-node-scripts build",
+    "postinstall": "yarn compile-proto",
+    "compile-proto": "rimraf ./src/proto/*.d.ts ./src/proto/*.js && pbjs -t static-module -w commonjs -o src/proto/User.js vendor/User.proto && pbts -o src/proto/User.d.ts src/proto/User.js",
     "lint": "tslint --project ."
   },
   "devDependencies": {
     "@types/jest": "^24.0.6",
     "@types/node": "^11.9.4",
+    "@types/request": "^2.48.1",
+    "rimraf": "^2.6.3",
     "tslint": "^5.12.1",
-    "typescript": "^3.3.3333"
+    "typescript": "^3.3.3333",
+    "typescript-node-scripts": "^1.3.0"
   },
   "dependencies": {
-    "typescript-node-scripts": "^1.3.0"
+    "protobufjs": "^6.8.8",
+    "request": "^2.88.0",
+    "source-map-support": "^0.5.10"
   }
 }

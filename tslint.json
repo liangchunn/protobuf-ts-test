@@ -2,6 +2,7 @@
     "extends": ["tslint:recommended", "tslint-config-prettier"],
     "defaultSeverity": "warning",
     "rules": {
+        "no-console": false,
         "ordered-imports": false,
         "object-literal-sort-keys": false,
         "array-type": [true, "array"],
@@ -33,6 +34,6 @@
         ]
     },
     "linterOptions": {
-        "exclude": ["node_modules/**/*.ts"]
+        "exclude": ["node_modules/**/*.ts", "src/proto/**/*.js"]
     }
 }
