@@ -8,7 +8,7 @@
     "start": "typescript-node-scripts start",
     "build": "typescript-node-scripts build",
     "postinstall": "yarn compile-proto",
-    "compile-proto": "rimraf ./src/proto/*.d.ts ./src/proto/*.js && pbjs -t static-module -w commonjs -o src/proto/User.js vendor/User.proto && pbts -o src/proto/User.d.ts src/proto/User.js",
+    "compile-proto": "rimraf ./src/generated/proto/*.d.ts ./src/generated/proto/*.js && pbjs -t static-module -w commonjs -o src/generated/proto/User.js vendor/User.proto && pbts -o src/generated/proto/User.d.ts src/generated/proto/User.js",
     "lint": "tslint --project ."
   },
   "devDependencies": {

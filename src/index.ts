@@ -1,8 +1,10 @@
 import 'source-map-support/register'
-import { User, IUser } from './proto/User'
-import { sendProtobufWire } from './util/protobuf/wire'
-import { encodeProtobufMessage } from './util/protobuf/encoder'
-import { decodeProtobufMessage } from './util/protobuf/decoder'
+import { User, IUser } from './generated/proto/User'
+import {
+  encodeProtobufMessage,
+  decodeProtobufMessage,
+  sendProtobufWire,
+} from './util/protobuf'
 
 const payload: IUser = {
   name: 'hello',
